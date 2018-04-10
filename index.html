@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>Выходные данные</title>
     <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
 </head>
+
 <body>
    <div class="container">
        <h1>Генератор схем выходных данных</h1>
@@ -15,7 +17,7 @@
        <div class="main">
            <div class="change_product">
                <h2>1. Выбрать продукцию</h2>
-                   <input type="text" id="tvp" list="tvp_list">
+                   <input type="text" id="tvp" list="tvp_list" onchange="ch_product()">
                    <datalist id="tvp_list">
                        <option value="Полиграфическая проба"></option>
                        <option value="Цифровая цветопроба"></option>
@@ -75,26 +77,53 @@
                        <option value="Титул к диплому ТП"></option>
                        <option value="Диплом ТП комплект"></option>
                    </datalist>
-                   <input type="button" id="reboot" value="Начать заново">
+                   <input type="button" id="reboot" value="Начать заново" >
            </div>
-           <div class="change_company">
+           <div id="change_company">
                <h2>2. Выбрать компанию</h2>
-               <select name="company" id="change_company">
+               <select name="company" id="change_company_select" onchange="ch_lang()" >
+                   <option value="None">-</option>
                    <option value="Формат">Формат</option>
                    <option value="Альфа-Е">Альфа-Е</option>
                </select>
            </div>
-           <div class="change_language">
+           <div id="change_language">
                <h2>3. Выбрать язык выходных данных</h2>
-               <select name="language" id="change_language">
+               <select name="language" id="change_language_select" onchange="ch_out_data()">
+                   <option value="None">-</option>
                    <option value="Рус">Рус</option>
                    <option value="Eng">Eng</option>
                </select>
            </div>
-           <div class="change_out_data">
+           <div id="change_out_data">
                <h2>4. Выбрать тип выходных данных</h2>
+               <div class="out_data">
+                   <div id="out_data_rus">
+                       <input type="button" class="out_data_img" id="f1">
+                       <input type="button" class="out_data_img" id="f2">
+                       <input type="button" class="out_data_img" id="f3">
+                       <input type="button" class="out_data_img" id="f4">
+                       <input type="button" class="out_data_img" id="f8">
+                   </div>
+                   <div class="clrb"></div>
+                   <div id="out_data_eng">
+                       <input type="button" class="out_data_img" id="f5">
+                       <input type="button" class="out_data_img" id="f6">
+                       <input type="button" class="out_data_img" id="f7">
+                       <input type="button" class="out_data_img" id="f8">
+                   </div>
+                   <div class="clrb"></div>
+                   <div id="out_data_book">
+                       <input type="button" class="out_data_img" id="f2">
+                   </div>
+                   <div class="clrb"></div>
+                   <div id="out_data_et">
+                       <input type="button" class="out_data_img" id="f8">
+                   </div>
+                   <div class="clrb"></div>
+               </div>
            </div>
-           <div class="change_place">
+           <div id="change_place">
                <h2>5. Выбрать место выходных данных</h2>
            </div>
        </div>

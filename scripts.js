@@ -34,3 +34,13 @@ function ch_out_data() {
 
 
 }
+
+function ch_position(Id) {
+
+    document.getElementById('change_place').style.display = "block";
+    for (i = 1; i < 9; i++) {
+        document.getElementById("f"+i).style.outline = "None"
+    }
+    document.getElementById(Id).style.outline = "2px solid #356"
+    
+}

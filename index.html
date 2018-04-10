@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Выходные данные</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container">
+       <h1>Генератор схем выходных данных</h1>
+       <div class="diagram_out_data">
+           <h2>Выходные данные</h2>
+           <div class="diagram"></div>
+       </div>
+       <div class="main">
+           <div class="change_product">
+               <h2>1. Выбрать продукцию</h2>
+                   <input type="text" id="tvp" list="tvp_list">
+                   <datalist id="tvp_list">
+                       <option value="Полиграфическая проба"></option>
+                       <option value="Цифровая цветопроба"></option>
+                       <option value="Брошюра КБС"></option>
+                       <option value="Брошюра КШС"></option>
+                       <option value="Брошюра скр."></option>
+                       <option value="Переплетная крышка"></option>
+                       <option value="Переплетная крышка книги"></option>
+                       <option value="Грамота"></option>
+                       <option value="Брошюра пруж"></option>
+                       <option value="Еженедельник"></option>
+                       <option value="Карта листовая"></option>
+                       <option value="Карта сфальцованная"></option>
+                       <option value="Афиша"></option>
+                       <option value="Набор открыток"></option>
+                       <option value="Пакет с ручками шнур"></option>
+                       <option value="Плакат"></option>
+                       <option value="Рекламный комплект"></option>
+                       <option value="Пакет с ручками лента"></option>
+                       <option value="Этикетка"></option>
+                       <option value="Кольеретка"></option>
+                       <option value="Контрэтикетка"></option>
+                       <option value="Комплект этикетки"></option>
+                       <option value="Полоска водки"></option>
+                       <option value="Этикетка флат"></option>
+                       <option value="Этикетка мороженное"></option>
+                       <option value="Этикетка-книжка сф."></option>
+                       <option value="Этикетка-книжка скр."></option>
+                       <option value="Коробка трехточка"></option>
+                       <option value="Лоток с телескопическим бортом"></option>
+                       <option value="Коробка Туба"></option>
+                       <option value="Лоток с прямоугольным бортом"></option>
+                       <option value="Коробка для сыпучих продуктов"></option>
+                       <option value="Пакет для семян"></option>
+                       <option value="Коробка с дном собираемым вручную"></option>
+                       <option value="Моноблок"></option>
+                       <option value="Шоу-бокс"></option>
+                       <option value="Упаковка плоская"></option>
+                       <option value="ЦБ Бланк"></option>
+                       <option value="Газета сф."></option>
+                       <option value="Газета скр."></option>
+                       <option value="Календарь Домик"></option>
+                       <option value="Календарь перек. настольный"></option>
+                       <option value="Календарь плакат"></option>
+                       <option value="Календарь ЕК1"></option>
+                       <option value="Календарь ЕК2"></option>
+                       <option value="Календарь ЕК3"></option>
+                       <option value="Календарь перек. настенный"></option>
+                       <option value="Календарь скр. стен."></option>
+                       <option value="Календарь с карм. стол"></option>
+                       <option value="Книга ТП"></option>
+                       <option value="Удостов л."></option>
+                       <option value="Удостов ТП"></option>
+                       <option value="Удостов ТП с блоком"></option>
+                       <option value="Диплом ТП"></option>
+                       <option value="Приложение к диплому ТП"></option>
+                       <option value="Титул к диплому ТП"></option>
+                       <option value="Диплом ТП комплект"></option>
+                   </datalist>
+                   <input type="button" id="reboot" value="Начать заново">
+           </div>
+           <div class="change_company">
+               <h2>2. Выбрать компанию</h2>
+               <select name="company" id="change_company">
+                   <option value="Формат">Формат</option>
+                   <option value="Альфа-Е">Альфа-Е</option>
+               </select>
+           </div>
+           <div class="change_language">
+               <h2>3. Выбрать язык выходных данных</h2>
+               <select name="language" id="change_language">
+                   <option value="Рус">Рус</option>
+                   <option value="Eng">Eng</option>
+               </select>
+           </div>
+           <div class="change_out_data">
+               <h2>4. Выбрать тип выходных данных</h2>
+           </div>
+           <div class="change_place">
+               <h2>5. Выбрать место выходных данных</h2>
+           </div>
+       </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+.container{
+    min-width: 600px;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fafafa;
+    padding: 15px;
+}
+h1{
+    text-align: center;
+}
+.diagram_out_data{
+    width: 300px;
+    height: 300px;
+    outline: 1px solid grey;
+    float:right;
+    margin-right: 150px;
+}
+.diagram_out_data > h2{
+    text-align: center;
+    margin-top: 5px;
+}
+#tvp list
+{
+    color: aqua;
+    font-weight: 200;
+}

@@ -28,66 +28,44 @@ function ch_lang() {
 function show_out_data() {
     document.getElementById('change_out_data').style.display = "block";
 }
+function hide_out_data() {
+    var a = ['out_data_et_format', 'out_data_eng_format', 'out_data_book_format', 'out_data_rus_format', 'out_data_et_alfa', 'out_data_rus_alfa', 'out_data_eng_alfa'];
+    for (var i=0; i<7; i++){
+        document.getElementById(a[i]).style.display = "none";
+    }
+}
 function ch_out_data() {
     var lang = document.getElementById('change_language_select').value;
-    var company = document.getElementById('change_company_select').value
-    if (ch_group_tvp() == "et" && campany == "Формат") {
-       var obj = document.getElementById('out_data_et_format');
-        document.getElementById('out_data_eng_format').style.display = "none";
-        document.getElementById('out_data_book_format').style.display = "none";
-        document.getElementById('out_data_rus_format').style.display = "none";
-        obj.style.display = "block"; 
+    var company = document.getElementById('change_company_select').value;
+    if (ch_group_tvp() == "et") {
+        hide_out_data();
+        document.getElementById("out_data_et_format").style.display = "block"; 
     }
     else if (ch_group_tvp() == "book" && campany == "Формат") {
-       var obj = document.getElementById('out_data_book');
-        document.getElementById('out_data_eng_format').style.display = "none";
-        document.getElementById('out_data_et_format').style.display = "none";
-        document.getElementById('out_data_rus_format').style.display = "none";
-        obj.style.display = "block";
+        hide_out_data();
+        document.getElementById("out_data_book_format").style.display = "block";
     }
-    else if (lang == "Рус" && campany == "Формат") {
-
-        var obj = document.getElementById('out_data_rus');
-        document.getElementById('out_data_eng_format').style.display = "none";
-        document.getElementById('out_data_book_format').style.display = "none";
-        document.getElementById('out_data_et_format').style.display = "none";
-        obj.style.display = "block";
-
+    else if (lang == "Рус") {
+        hide_out_data();
+        document.getElementById('out_data_rus_format').style.display = "block";
     }
     else if (lang == "Eng" && campany == "Формат") {
-
-        var obj = document.getElementById('out_data_eng_format');
-        document.getElementById('out_data_rus_format').style.display = "none";
-        document.getElementById('out_data_book_format').style.display = "none";
-        document.getElementById('out_data_et_format').style.display = "none";
-        obj.style.display = "block";
-
+        hide_out_data();
+        document.getElementById('out_data_eng_format').style.display = "block";
     }
-    
     else if (ch_group_tvp() == "et" && campany == "Формат") {
-
-        var obj = document.getElementById('out_data_et_alfa');
-        document.getElementById('out_data_rus_alfa').style.display = "none";
-        document.getElementById('out_data_eng_alfa').style.display = "none";
-        obj.style.display = "block";
-
+        hide_out_data();
+        document.getElementById("out_data_et_alfa").style.display = "block";
     }
     else if (lang == "Рус" && campany == "Формат") {
-
-        var obj = document.getElementById('out_data_rus_alfa');
-        document.getElementById('out_data_et_alfa').style.display = "none";
-        document.getElementById('out_data_eng_alfa').style.display = "none";
-        obj.style.display = "block";
-
+        hide_out_data();
+        document.getElementById('out_data_rus_alfa').style.display = "block";
     }
     else if (lang == "Eng" && campany == "Формат") {
-
-        var obj = document.getElementById('out_data_eng_alfa');
-        document.getElementById('out_data_et_alfa').style.display = "none";
-        document.getElementById('out_data_rus_alfa').style.display = "none";
-        obj.style.display = "block";
-
+        hide_out_data();
+        document.getElementById('out_data_eng_alfa').style.display = "block";
     }
+
 
 
 }

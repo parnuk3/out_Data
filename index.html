@@ -81,10 +81,10 @@
            </div>
            <div id="change_company">
                <h2>2. Выбрать компанию</h2>
-               <select name="company" id="change_company_select" onchange="ch_lang()" >
+               <select name="company" id="change_company_select" onchange="ch_lang(); ch_out_data()" >
                    <option value="None">-</option>
                    <option value="Format">Формат</option>
-                   <option value="Альфа-Е">Альфа-Е</option>
+                   <option value="Alfa">Альфа-Е</option>
                </select>
            </div>
            <div id="change_language">
@@ -110,15 +110,15 @@
                        <input type="button" class="out_data_img" id="f5" onclick="ch_position('f5')">
                        <input type="button" class="out_data_img" id="f6" onclick="ch_position('f6')">
                        <input type="button" class="out_data_img" id="f7" onclick="ch_position('f7')">
-                       <input type="button" class="out_data_img" id="f8" onclick="ch_position('f8')">
+                       <input type="button" class="out_data_img" id="f9" onclick="ch_position('f9')">
                    </div>
                    <div class="clrb"></div>
                    <div id="out_data_book_format">
-                       <input type="button" class="out_data_img" id="f2" onclick="ch_position('f2')">
+                       <input type="button" class="out_data_img" id="f10" onclick="ch_position('f10')">
                    </div>
                    <div class="clrb"></div>
                    <div id="out_data_et_format">
-                       <input type="button" class="out_data_img" id="f8" onclick="ch_position('f8')">
+                       <input type="button" class="out_data_img" id="f11" onclick="ch_position('f11')">
                    </div>
                    <div class="clrb"></div>
                    <div id="out_data_et_alfa">
@@ -128,7 +128,7 @@
                    <div id="out_data_rus_alfa">
                        <input type="button" class="out_data_img" id="a1" onclick="ch_position('a1')">
                        <input type="button" class="out_data_img" id="a2" onclick="ch_position('a2')">
-                       <input type="button" class="out_data_img" id="a2" onclick="ch_position('a2')">
+                       <input type="button" class="out_data_img" id="a3" onclick="ch_position('a3')">
                    </div>
                    <div class="clrb"></div>
                    <div id="out_data_eng_alfa">

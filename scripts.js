@@ -37,45 +37,52 @@ function hide_out_data() {
 function ch_out_data() {
     var lang = document.getElementById('change_language_select').value;
     var company = document.getElementById('change_company_select').value;
-    if (ch_group_tvp() == "et") {
+    if (company == "Format") {
+        if (ch_group_tvp() == "et") {
+            hide_out_data();
+            document.getElementById("out_data_et_format").style.display = "block"; 
+        } else if (ch_group_tvp() == "book") {
+            hide_out_data();
+            document.getElementById("out_data_book_format").style.display = "block";
+        } else if (lang == "Рус") {
+            hide_out_data();
+            document.getElementById('out_data_rus_format').style.display = "block";
+        } else if (lang == "Eng") {
+            hide_out_data();
+            document.getElementById('out_data_eng_format').style.display = "block";
+        }
+    } else if (company == "Alfa") {
+        if (ch_group_tvp() == "et") {
+            hide_out_data();
+            document.getElementById("out_data_et_alfa").style.display = "block";
+        } else if (lang == "Рус") {
+            hide_out_data();
+            document.getElementById("out_data_rus_alfa").style.display = "block";
+        } else if (lang == "Eng") {
+            hide_out_data();
+            document.getElementById('out_data_eng_alfa').style.display = "block";
+        }
+    } else {
         hide_out_data();
-        document.getElementById("out_data_et_format").style.display = "block"; 
     }
-    else if (ch_group_tvp() == "book" && campany == "Формат") {
-        hide_out_data();
-        document.getElementById("out_data_book_format").style.display = "block";
-    }
-    else if (lang == "Рус") {
-        hide_out_data();
-        document.getElementById('out_data_rus_format').style.display = "block";
-    }
-    else if (lang == "Eng" && campany == "Формат") {
-        hide_out_data();
-        document.getElementById('out_data_eng_format').style.display = "block";
-    }
-    else if (ch_group_tvp() == "et" && campany == "Формат") {
-        hide_out_data();
-        document.getElementById("out_data_et_alfa").style.display = "block";
-    }
-    else if (lang == "Рус" && campany == "Формат") {
-        hide_out_data();
-        document.getElementById('out_data_rus_alfa').style.display = "block";
-    }
-    else if (lang == "Eng" && campany == "Формат") {
-        hide_out_data();
-        document.getElementById('out_data_eng_alfa').style.display = "block";
-    }
+    if (lang != "Рус" && lang != "Eng") {
 
-
+        hide_out_data();
+        
+    }
 
 }
 
 function ch_position(Id) {
-
     document.getElementById('change_place').style.display = "block";
-    for (i = 1; i < 9; i++) {
+
+    for (var i = 1; i < 12; i++) {
         document.getElementById("f"+i).style.outline = "None"
     }
+    for (var i = 1; i < 5; i++) {
+        document.getElementById("a"+i).style.outline = "None"
+    }
+    
     document.getElementById(Id).style.outline = "2px solid #356"
     
 }

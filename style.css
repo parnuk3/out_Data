@@ -33,9 +33,9 @@ h1{
 }
 .out_data_img{
     float: left;
-    outline: 1px solid #000;
+    outline: 1px solid #ddd;
     width: 20%;
-    height: 70px;
+    height: 54px;
     padding: 0;
 }
 .out_data_img:hover{
@@ -47,82 +47,85 @@ h1{
 }
 #f1{
     background: url('img/f1.jpg');
-    background-size:cover;
+    background-size:contain;
     background-repeat: no-repeat;
 }
 #f2{
     background: url('img/f2.jpg');
-    background-size:cover;
+    background-size:contain;
     background-repeat: no-repeat;
 }
 #f3{
     background: url('img/f3.jpg');
-    background-size:cover;
+    background-size:contain;
     background-repeat: no-repeat;
 }
 #f4{
     background: url('img/f4.jpg');
-    background-size:cover;
+    background-size:contain;
     background-repeat: no-repeat;
 }
 #f5{
     background: url('img/f5.jpg');
-    background-size:cover;
+    background-size:contain;
     background-repeat: no-repeat;
 }
 #f6{
     background: url('img/f6.jpg');
-    background-size:cover;
+    background-size:contain;
     background-repeat: no-repeat;
 }
 #f7{
     background: url('img/f7.jpg');
-    background-size:cover;
+    background-size:contain;
     background-repeat: no-repeat;
 }
 #f8{
     background: url('img/f8.jpg');
-    background-size:cover;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#f9{
+    background: url('img/f8.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#f10{
+    background: url('img/f2.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#f11{
+    background: url('img/f8.jpg');
+    background-size:contain;
     background-repeat: no-repeat;
 }
 #a1{
     background: url('img/a1.jpg');
-    background-size:cover;
+    background-size:contain;
     background-repeat: no-repeat;
 }
 #a2{
     background: url('img/a2.jpg');
-    background-size:cover;
+    background-size:contain;
     background-repeat: no-repeat;
 }
 #a3{
     background: url('img/a3.jpg');
-    background-size:cover;
+    background-size:contain;
     background-repeat: no-repeat;
 }
 #a4{
     background: url('img/a4.jpg');
-    background-size:cover;
+    background-size:contain;
     background-repeat: no-repeat;
 }
-#out_data_rus_format{
-    display: none;
-}
-#out_data_eng_format{
-    display: none;
-}
-#out_data_book_format{
-    display: none;
-}
-#out_data_et_format{
-    display: none;
-}
-#out_data_et_alfa{
-    display: none;
-}
-#out_data_rus_alfa{
-    display: none;
-}
+#out_data_rus_format,
+#out_data_eng_format,
+#out_data_book_format,
+#out_data_et_format,
+#out_data_et_alfa,
+#out_data_rus_alfa,
 #out_data_eng_alfa{
     display: none;
 }

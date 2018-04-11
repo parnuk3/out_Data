@@ -39,7 +39,7 @@ h1{
     padding: 0;
 }
 .out_data_img:hover{
-    outline: 2px solid #ddd;
+    outline: 2px solid #ccc;
     cursor:pointer;
 }
 .clrb{
@@ -129,3 +129,191 @@ h1{
 #out_data_eng_alfa{
     display: none;
 }
+.description{
+    border: 1px solid #000;
+    width: 250px;
+    height: 200px;
+    float: left;
+}
+.position{
+    border: 1px solid #000;
+    width: 630px;
+    height: 200px;
+    float:left
+}
+.position_img{
+    margin: 10px 0 0 10px;
+    float: left;
+    outline: 1px solid #ddd;
+    width: 20%;
+    height: 180px;
+    padding: 0;
+}
+.position_img:hover{
+    outline: 3px solid #ccc;
+    cursor:pointer;
+}
+#_1a,#_11a{
+    background: url('img/out_data/1a.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#_1b,#_11b{
+    background: url('img/out_data/1b.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#_1c,#_11c{
+    background: url('img/out_data/1c.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#_1d,#_11d{
+    background: url('img/out_data/1d.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#_2a,#_12a{
+    background: url('img/out_data/2a.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#_2b,#_12b{
+    background: url('img/out_data/2b.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#_2c,#_12c{
+    background: url('img/out_data/2c.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#_3a,#_13a{
+    background: url('img/out_data/3a.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#_4a{
+    background: url('img/out_data/4a.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#_4b{
+    background: url('img/out_data/4b.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#_4c{
+    background: url('img/out_data/4c.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#_5a{
+    background: url('img/out_data/5a.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 40%;
+    height: 90px;
+}
+#_5b{
+    background: url('img/out_data/5b.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 40%;
+    height: 90px;
+}
+#_6a{
+    background: url('img/out_data/6a.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#_6b{
+    background: url('img/out_data/6b.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#_6c{
+    background: url('img/out_data/6c.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#_7a{
+    background: url('img/out_data/7a.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 130px;
+}
+#_7b{
+    background: url('img/out_data/7b.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 130px;
+}
+#_7c{
+    background: url('img/out_data/7c.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 130px;
+}
+#_8a{
+    background: url('img/out_data/8a.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 180px;
+}
+#_8b{
+    background: url('img/out_data/8b.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 26%;
+    height: 180px;
+}
+#_8c{
+    background: url('img/out_data/8c.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 27%;
+    height: 180px;
+}
+#_9a{
+    background: url('img/out_data/9a.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 45%;
+    height: 100px;
+}
+#_9b{
+    background: url('img/out_data/9b.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 45%;
+    height: 100px;
+}
+#_10a{
+    background: url('img/out_data/10a.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 45%;
+    height: 130px;
+}
+#_10b{
+    background: url('img/out_data/10b.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 45%;
+    height: 130px;
+}
+
+
+p {
+    margin-left: 10px;
+}
+
+
+
+
+

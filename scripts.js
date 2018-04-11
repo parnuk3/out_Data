@@ -83,6 +83,16 @@ function ch_position(Id) {
         document.getElementById("a"+i).style.outline = "None"
     }
     
-    document.getElementById(Id).style.outline = "2px solid #356"
+    document.getElementById(Id).style.outline = "3px solid #356"
+    
+}
+
+function done(Id) {
+    var a = ['_1a', '_1b', '_1c', '_1d', '_11a', '_11b', '_11c', '_11d', '_2a', '_2b', '_2c', '_12a', '_12b', '_12c', '_3a', '_13a', '_4a', '_4b', '_4c', '_5a', '_5b', '_6a', '_6b', '_6c', '_7a', '_7b', '_7c', '_8a', '_8b', '_8c', '_9a', '_9b', '_10a', '_10b']
+    for (var i = 0; i < 34; i++) {
+        document.getElementById(a[i]).style.outline = "None"
+    }
+    
+    document.getElementById(Id).style.outline = "3px solid #356"
     
 }

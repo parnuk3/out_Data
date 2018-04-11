@@ -85,15 +85,44 @@ h1{
     background-size:cover;
     background-repeat: no-repeat;
 }
-#out_data_rus{
+#a1{
+    background: url('img/a1.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+#a2{
+    background: url('img/a2.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+#a3{
+    background: url('img/a3.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+#a4{
+    background: url('img/a4.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+#out_data_rus_format{
     display: none;
 }
-#out_data_eng{
+#out_data_eng_format{
     display: none;
 }
-#out_data_book{
+#out_data_book_format{
     display: none;
 }
-#out_data_et{
+#out_data_et_format{
+    display: none;
+}
+#out_data_et_alfa{
+    display: none;
+}
+#out_data_rus_alfa{
+    display: none;
+}
+#out_data_eng_alfa{
     display: none;
 }

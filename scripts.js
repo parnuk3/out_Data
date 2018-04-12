@@ -42,7 +42,7 @@ function ch_group_tvp() {
 
 function reboot(){
     location.reload(true);
-}
+} //обновить страницу
 
 function ch_product() {
 
@@ -76,6 +76,7 @@ function hide_out_data() {
         document.getElementById(a[i]).style.display = "none";
     }
 }
+
 function ch_out_data() {
     var lang = document.getElementById('change_language_select').value;
     var company = document.getElementById('change_company_select').value;
@@ -106,11 +107,28 @@ function ch_out_data() {
         }
     } else {
         hide_out_data();
+        hide_position();
+        document.getElementById("diagram").style.background = "none";
+        document.getElementById("diagram_out_data").style.background = "none";
+        document.getElementById("diagram_out_data").style.outline = "none";
+        document.getElementById("legend").style.display = "none";
+        document.getElementById("pos_data_res").innerHTML = "";
+        document.getElementById("type_data_res").innerHTML = "";
+        document.getElementById("change_out_data").style.display = "none";
+        document.getElementById("change_place").style.display = "none";
+        document.getElementById("change_language").style.display = "none";
     }
     if (lang != "Рус" && lang != "Eng") {
 
         hide_out_data();
-        
+        hide_position();
+        document.getElementById("diagram").style.background = "none";
+        document.getElementById("diagram_out_data").style.background = "none";
+        document.getElementById("diagram_out_data").style.outline = "none";
+        document.getElementById("legend").style.display = "none";
+        document.getElementById("pos_data_res").innerHTML = "";
+        document.getElementById("change_out_data").style.display = "none";
+        document.getElementById("change_place").style.display = "none";
     }
 
 }
@@ -193,4 +211,14 @@ function draw_diagram(a){
     document.getElementById("diagram").style.backgroundSize = "contain";
     document.getElementById("diagram").style.backgroundRepeat = "no-repeat";
     document.getElementById("diagram").style.backgroundPosition = "center";
+    document.getElementById("pos_data_res").innerHTML = a;
+}
+function draw_diagram_out_data(a){
+    document.getElementById("diagram_out_data").style.background = "url('img/"+a+".jpg')";
+    document.getElementById("diagram_out_data").style.backgroundSize = "contain";
+    document.getElementById("diagram_out_data").style.backgroundRepeat = "no-repeat";
+    document.getElementById("diagram_out_data").style.backgroundPosition = "right";
+    document.getElementById("diagram_out_data").style.outline = "1px solid #ccc"
+    document.getElementById("legend").style.display = "block";
+    document.getElementById("type_data_res").innerHTML = a;
 }

@@ -9,10 +9,25 @@
 
 <body>
    <div class="container">
-       <h1>Генератор схем выходных данных</h1>
-       <div class="diagram_out_data">
-           <h2>Выходные данные</h2>
-           <div id="diagram"></div>
+       <h1>Генератор выходных данных</h1>
+       <div id="result">
+           <div>
+               <div id="type_data">
+                   <p>Тип</p>
+                   <div id="type_data_res"></div>
+               </div>
+               <div id="pos_data">
+                   <p>Место</p>
+                   <div id="pos_data_res"></div>
+               </div>
+           </div>
+           
+           <div class="diagram_out_data">
+               <h2>Выходные данные</h2>
+               <div id="diagram"></div>
+               <div id="diagram_out_data"></div>
+               <div id="legend"><img src="img/legend.jpg" alt="Легенда"></div>
+           </div>
        </div>
        <div class="main">
            <div class="change_product">
@@ -101,36 +116,36 @@
                <h2>4. Выбрать тип выходных данных</h2>
                <div class="out_data">
                    <div id="out_data_rus_format">
-                       <input type="button" class="out_data_img" id="f1" onclick="select_out_data('f1'); show_position(); ch_position()">
-                       <input type="button" class="out_data_img" id="f2" onclick="select_out_data('f2'); show_position(); ch_position()">
-                       <input type="button" class="out_data_img" id="f3" onclick="select_out_data('f3'); show_position(); ch_position()">
-                       <input type="button" class="out_data_img" id="f4" onclick="select_out_data('f4'); show_position(); ch_position()">
-                       <input type="button" class="out_data_img" id="f8" onclick="select_out_data('f8'); show_position(); ch_position()">
+                       <input type="button" class="out_data_img" id="f1" onclick="select_out_data('f1'); show_position(); ch_position(); draw_diagram_out_data('f1')">
+                       <input type="button" class="out_data_img" id="f2" onclick="select_out_data('f2'); show_position(); ch_position(); draw_diagram_out_data('f2')">
+                       <input type="button" class="out_data_img" id="f3" onclick="select_out_data('f3'); show_position(); ch_position(); draw_diagram_out_data('f3')">
+                       <input type="button" class="out_data_img" id="f4" onclick="select_out_data('f4'); show_position(); ch_position(); draw_diagram_out_data('f4')">
+                       <input type="button" class="out_data_img" id="f8" onclick="select_out_data('f8'); show_position(); ch_position(); draw_diagram_out_data('f8')">
                    </div>
                    <div class="clrb"></div>
                    <div id="out_data_eng_format">
-                       <input type="button" class="out_data_img" id="f5" onclick="select_out_data('f5'); show_position(); ch_position()">
-                       <input type="button" class="out_data_img" id="f6" onclick="select_out_data('f6'); show_position(); ch_position()">
-                       <input type="button" class="out_data_img" id="f7" onclick="select_out_data('f7'); show_position(); ch_position()">
-                       <input type="button" class="out_data_img" id="f9" onclick="select_out_data('f9'); show_position(); ch_position()">
+                       <input type="button" class="out_data_img" id="f5" onclick="select_out_data('f5'); show_position(); ch_position(); draw_diagram_out_data('f5')">
+                       <input type="button" class="out_data_img" id="f6" onclick="select_out_data('f6'); show_position(); ch_position(); draw_diagram_out_data('f6')">
+                       <input type="button" class="out_data_img" id="f7" onclick="select_out_data('f7'); show_position(); ch_position(); draw_diagram_out_data('f7')">
+                       <input type="button" class="out_data_img" id="f9" onclick="select_out_data('f9'); show_position(); ch_position(); draw_diagram_out_data('f8')">
                    </div>
                    <div class="clrb"></div>
                    <div id="out_data_book_format">
-                       <input type="button" class="out_data_img" id="f10" onclick="select_out_data('f10'); show_position(); ch_position()">
+                       <input type="button" class="out_data_img" id="f10" onclick="select_out_data('f10'); show_position(); ch_position(); draw_diagram_out_data('f4')">
                    </div>
                    <div class="clrb"></div>
                    <div id="out_data_et_format">
-                       <input type="button" class="out_data_img" id="f11" onclick="select_out_data('f11'); show_position(); ch_position()">
+                       <input type="button" class="out_data_img" id="f11" onclick="select_out_data('f11'); show_position(); ch_position(); draw_diagram_out_data('f8')">
                    </div>
                    <div class="clrb"></div>
                    <div id="out_data_et_alfa">
-                       <input type="button" class="out_data_img" id="a4" onclick="select_out_data('a4'); show_position(); ch_position()">
+                       <input type="button" class="out_data_img" id="a4" onclick="select_out_data('a4'); show_position(); ch_position(); draw_diagram_out_data('a4')">
                    </div>
                    <div class="clrb"></div>
                    <div id="out_data_rus_alfa">
-                       <input type="button" class="out_data_img" id="a1" onclick="select_out_data('a1'); show_position(); ch_position()">
-                       <input type="button" class="out_data_img" id="a2" onclick="select_out_data('a2'); show_position(); ch_position()">
-                       <input type="button" class="out_data_img" id="a3" onclick="select_out_data('a3'); show_position(); ch_position()">
+                       <input type="button" class="out_data_img" id="a1" onclick="select_out_data('a1'); show_position(); ch_position(); draw_diagram_out_data('a1')">
+                       <input type="button" class="out_data_img" id="a2" onclick="select_out_data('a2'); show_position(); ch_position(); draw_diagram_out_data('a2')">
+                       <input type="button" class="out_data_img" id="a3" onclick="select_out_data('a3'); show_position(); ch_position(); draw_diagram_out_data('a3')">
                    </div>
                    <div class="clrb"></div>
                    <div id="out_data_eng_alfa">

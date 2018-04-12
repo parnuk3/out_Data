@@ -1,13 +1,29 @@
+body{
+    font-family: sans-serif;
+    color: #222;
+}
 .container{
-    min-width: 600px;
-    max-width: 900px;
+    width: 900px;
     margin: 0 auto;
-    background-color: #fafafa;
-    padding: 15px;
+    background-color: #D2D2D2;
     min-height: 400px;
+}
+.main{
+    padding: 0 10px 0 10px;
 }
 h1{
     text-align: center;
+    background-color: #EDB23E;
+    font-weight: 100;
+    height: 70px;
+    line-height: 70px;
+}
+h2{
+    font-weight: 100;
+}
+#error{
+    color: red;
+    margin-top: 10px;
 }
 #change_company,
 #change_language,
@@ -15,12 +31,40 @@ h1{
 #change_place{
     display: none;
 }
+
+#type_data_res,
+#pos_data_res{
+    border: 1px solid grey;
+    width: 20px;
+    height: 20px;
+    float: right;
+    padding-left: 5px;
+}
+p {
+    margin: 0px;
+    display: inline;
+}
+#type_data,
+#pos_data{
+    margin-top: 10px;
+    width: 90px;
+    height: 20px;
+}
+
+#result{
+    float: right;
+    margin-right: 50px;
+}
+#result > div{
+    float: left;
+    margin-right: 20px;
+}
 .diagram_out_data{
     width: 300px;
     height: 300px;
     outline: 1px solid grey;
     float:right;
-    margin-right: 150px;
+    
 }
 .diagram_out_data > h2{
     text-align: center;
@@ -28,7 +72,21 @@ h1{
 }
 #diagram{
     height: 180px;
-    margin: 10px;
+    margin: 0 10px 10px 10px;
+}
+#diagram_out_data{
+    height: 50px;
+    width: 175px;
+    margin: 0 10px 10px 10px;
+    float: right;
+}
+#legend img{
+    width: 80px;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+#legend{
+    display: none;
 }
 #tvp list
 {
@@ -38,9 +96,10 @@ h1{
 .out_data_img{
     float: left;
     outline: 1px solid #ddd;
-    width: 20%;
-    height: 54px;
+    width: 19%;
+    height: 50px;
     padding: 0;
+    margin: 1px;
 }
 .out_data_img:hover{
     outline: 2px solid #ccc;
@@ -153,7 +212,7 @@ h1{
 }
 .position{
     border: 1px solid #000;
-    width: 630px;
+    width: 610px;
     height: 200px;
     float:left
 }

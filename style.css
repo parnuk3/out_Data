@@ -26,6 +26,10 @@ h1{
     text-align: center;
     margin-top: 5px;
 }
+#diagram{
+    height: 180px;
+    margin: 10px;
+}
 #tvp list
 {
     color: aqua;
@@ -127,6 +131,18 @@ h1{
 #out_data_et_alfa,
 #out_data_rus_alfa,
 #out_data_eng_alfa{
+    display: none;
+}
+#broshure,
+#ezd,
+#books,
+#sheet,
+#pack,
+#pack_sem,
+#ek,
+#box,
+#kln_dom,
+#et {
     display: none;
 }
 .description{

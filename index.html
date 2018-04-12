@@ -12,12 +12,12 @@
        <h1>Генератор схем выходных данных</h1>
        <div class="diagram_out_data">
            <h2>Выходные данные</h2>
-           <div class="diagram"></div>
+           <div id="diagram"></div>
        </div>
        <div class="main">
            <div class="change_product">
                <h2>1. Выбрать продукцию</h2>
-                   <input type="text" id="tvp" list="tvp_list" onchange="ch_product(); ch_out_data()">
+                   <input type="text" id="tvp" list="tvp_list" onchange="ch_product(); ch_out_data(); ch_position()">
                    <datalist id="tvp_list">
                        <option>Полиграфическая проба</option>
                        <option>Цифровая цветопроба</option>
@@ -29,6 +29,7 @@
                        <option>Грамота</option>
                        <option>Брошюра пруж</option>
                        <option>Еженедельник</option>
+                       <option>Ежедневник</option>
                        <option>Карта листовая</option>
                        <option>Карта сфальцованная</option>
                        <option>Афиша</option>
@@ -77,7 +78,8 @@
                        <option>Титул к диплому ТП</option>
                        <option>Диплом ТП комплект</option>
                    </datalist>
-                   <input type="button" id="reboot" value="Начать заново" >
+                   <input type="button" id="reboot" value="Начать заново" onclick="reboot()">
+                   <div id="error"></div>
            </div>
            <div id="change_company">
                <h2>2. Выбрать компанию</h2>
@@ -99,36 +101,36 @@
                <h2>4. Выбрать тип выходных данных</h2>
                <div class="out_data">
                    <div id="out_data_rus_format">
-                       <input type="button" class="out_data_img" id="f1" onclick="ch_position('f1')">
-                       <input type="button" class="out_data_img" id="f2" onclick="ch_position('f2')">
-                       <input type="button" class="out_data_img" id="f3" onclick="ch_position('f3')">
-                       <input type="button" class="out_data_img" id="f4" onclick="ch_position('f4')">
-                       <input type="button" class="out_data_img" id="f8" onclick="ch_position('f8')">
+                       <input type="button" class="out_data_img" id="f1" onclick="select_out_data('f1'); show_position(); ch_position()">
+                       <input type="button" class="out_data_img" id="f2" onclick="select_out_data('f2'); show_position(); ch_position()">
+                       <input type="button" class="out_data_img" id="f3" onclick="select_out_data('f3'); show_position(); ch_position()">
+                       <input type="button" class="out_data_img" id="f4" onclick="select_out_data('f4'); show_position(); ch_position()">
+                       <input type="button" class="out_data_img" id="f8" onclick="select_out_data('f8'); show_position(); ch_position()">
                    </div>
                    <div class="clrb"></div>
                    <div id="out_data_eng_format">
-                       <input type="button" class="out_data_img" id="f5" onclick="ch_position('f5')">
-                       <input type="button" class="out_data_img" id="f6" onclick="ch_position('f6')">
-                       <input type="button" class="out_data_img" id="f7" onclick="ch_position('f7')">
-                       <input type="button" class="out_data_img" id="f9" onclick="ch_position('f9')">
+                       <input type="button" class="out_data_img" id="f5" onclick="select_out_data('f5'); show_position(); ch_position()">
+                       <input type="button" class="out_data_img" id="f6" onclick="select_out_data('f6'); show_position(); ch_position()">
+                       <input type="button" class="out_data_img" id="f7" onclick="select_out_data('f7'); show_position(); ch_position()">
+                       <input type="button" class="out_data_img" id="f9" onclick="select_out_data('f9'); show_position(); ch_position()">
                    </div>
                    <div class="clrb"></div>
                    <div id="out_data_book_format">
-                       <input type="button" class="out_data_img" id="f10" onclick="ch_position('f10')">
+                       <input type="button" class="out_data_img" id="f10" onclick="select_out_data('f10'); show_position(); ch_position()">
                    </div>
                    <div class="clrb"></div>
                    <div id="out_data_et_format">
-                       <input type="button" class="out_data_img" id="f11" onclick="ch_position('f11')">
+                       <input type="button" class="out_data_img" id="f11" onclick="select_out_data('f11'); show_position(); ch_position()">
                    </div>
                    <div class="clrb"></div>
                    <div id="out_data_et_alfa">
-                       <input type="button" class="out_data_img" id="a4" onclick="ch_position('a4')">
+                       <input type="button" class="out_data_img" id="a4" onclick="select_out_data('a4'); show_position(); ch_position()">
                    </div>
                    <div class="clrb"></div>
                    <div id="out_data_rus_alfa">
-                       <input type="button" class="out_data_img" id="a1" onclick="ch_position('a1')">
-                       <input type="button" class="out_data_img" id="a2" onclick="ch_position('a2')">
-                       <input type="button" class="out_data_img" id="a3" onclick="ch_position('a3')">
+                       <input type="button" class="out_data_img" id="a1" onclick="select_out_data('a1'); show_position(); ch_position()">
+                       <input type="button" class="out_data_img" id="a2" onclick="select_out_data('a2'); show_position(); ch_position()">
+                       <input type="button" class="out_data_img" id="a3" onclick="select_out_data('a3'); show_position(); ch_position()">
                    </div>
                    <div class="clrb"></div>
                    <div id="out_data_eng_alfa">
@@ -145,24 +147,24 @@
                            <p>3-я полоса обложки/выклейка (левая), брошюра КБС/скр./пруж., еженедельник, ежедневник, удостоверение, диплом</p>
                        </div>
                        <div class="position">
-                           <input type="button" class="position_img" id="_1a" onclick="done('_1a')">
-                           <input type="button" class="position_img" id="_1b" onclick="done('_1b')">
-                           <input type="button" class="position_img" id="_1c" onclick="done('_1c')">
-                           <input type="button" class="position_img" id="_1d" onclick="done('_1d')">
+                           <input type="button" class="position_img" id="_1a" onclick="done('_1a'); draw_diagram('1a')">
+                           <input type="button" class="position_img" id="_1b" onclick="done('_1b'); draw_diagram('1b')">
+                           <input type="button" class="position_img" id="_1c" onclick="done('_1c'); draw_diagram('1c')">
+                           <input type="button" class="position_img" id="_1d" onclick="done('_1d'); draw_diagram('1d')">
                        </div>
                        <div class="description">
                            <p>4-я полоса обложки/выклейка (правая), брошюра КБС/скр./пруж., еженедельник, ежедневник, удостоверение, диплом</p>
                        </div>
                        <div class="position">
-                           <input type="button" class="position_img" id="_2a" onclick="done('_2a')">
-                           <input type="button" class="position_img" id="_2b" onclick="done('_2b')">
-                           <input type="button" class="position_img" id="_2c" onclick="done('_2c')">
+                           <input type="button" class="position_img" id="_2a" onclick="done('_2a'); draw_diagram('2a')">
+                           <input type="button" class="position_img" id="_2b" onclick="done('_2b'); draw_diagram('2b')">
+                           <input type="button" class="position_img" id="_2c" onclick="done('_2c'); draw_diagram('2c')">
                        </div>
                        <div class="description">
                            <p>Последняя страница ВнБл (Брошюра КБС/скр./пруж., книга ТП)</p>
                        </div>
                        <div class="position">
-                           <input type="button" class="position_img" id="_3a" onclick="done('_3a')">
+                           <input type="button" class="position_img" id="_3a" onclick="done('_3a'); draw_diagram('3a')">
                        </div>
                    </div>
                    <div class="clrb"></div>
@@ -171,18 +173,18 @@
                            <p>3-я полоса обложки/выклейка (левая), брошюра КБС/скр./пруж., еженедельник, ежедневник, удостоверение, диплом</p>
                        </div>
                        <div class="position">
-                           <input type="button" class="position_img" id="_11a" onclick="done('_11a')">
-                           <input type="button" class="position_img" id="_11b" onclick="done('_11b')">
-                           <input type="button" class="position_img" id="_11c" onclick="done('_11c')">
-                           <input type="button" class="position_img" id="_11d" onclick="done('_11d')">
+                           <input type="button" class="position_img" id="_11a" onclick="done('_11a'); draw_diagram('1a')">
+                           <input type="button" class="position_img" id="_11b" onclick="done('_11b'); draw_diagram('1b')">
+                           <input type="button" class="position_img" id="_11c" onclick="done('_11c'); draw_diagram('1c')">
+                           <input type="button" class="position_img" id="_11d" onclick="done('_11d'); draw_diagram('1d')">
                        </div>
                        <div class="description">
                            <p>4-я полоса обложки/выклейка (правая), брошюра КБС/скр./пруж., еженедельник, ежедневник, удостоверение, диплом</p>
                        </div>
                        <div class="position">
-                           <input type="button" class="position_img" id="_12a" onclick="done('_12a')">
-                           <input type="button" class="position_img" id="_12b" onclick="done('_12b')">
-                           <input type="button" class="position_img" id="_12c" onclick="done('_12c')">
+                           <input type="button" class="position_img" id="_12a" onclick="done('_12a'); draw_diagram('2a')">
+                           <input type="button" class="position_img" id="_12b" onclick="done('_12b'); draw_diagram('2b')">
+                           <input type="button" class="position_img" id="_12c" onclick="done('_12c'); draw_diagram('2c')">
                        </div>
                    </div>
                    <div class="clrb"></div>
@@ -191,7 +193,7 @@
                            <p>Последняя страница ВнБл (Брошюра КБС/скр./пруж., книга ТП)</p>
                        </div>
                        <div class="position">
-                           <input type="button" class="position_img" id="_13a" onclick="done('_13a')">
+                           <input type="button" class="position_img" id="_13a" onclick="done('_13a'); draw_diagram('3a')">
                        </div>
                    </div>
                    <div class="clrb"></div>
@@ -200,9 +202,9 @@
                            <p>Нижний край (грамота, карта л., карта сф., афиша, плакат, ЦБ бланк, календарь плакат</p>
                        </div>
                        <div class="position">
-                           <input type="button" class="position_img" id="_4a" onclick="done('_4a')">
-                           <input type="button" class="position_img" id="_4b" onclick="done('_4b')">
-                           <input type="button" class="position_img" id="_4c" onclick="done('_4c')">
+                           <input type="button" class="position_img" id="_4a" onclick="done('_4a'); draw_diagram('4a')">
+                           <input type="button" class="position_img" id="_4b" onclick="done('_4b'); draw_diagram('4b')">
+                           <input type="button" class="position_img" id="_4c" onclick="done('_4c'); draw_diagram('4c')">
                        </div>
                    </div>
                    <div class="clrb"></div>
@@ -211,8 +213,8 @@
                            <p>Дно с внешней стороны (пакет с ручками)</p>
                        </div>
                        <div class="position">
-                           <input type="button" class="position_img" id="_5a" onclick="done('_5a')">
-                           <input type="button" class="position_img" id="_5b" onclick="done('_5b')">
+                           <input type="button" class="position_img" id="_5a" onclick="done('_5a'); draw_diagram('5a')">
+                           <input type="button" class="position_img" id="_5b" onclick="done('_5b'); draw_diagram('5b')">
                        </div>
                    </div>
                    <div class="clrb"></div>
@@ -221,9 +223,9 @@
                            <p>На клеевом шве (пакет для семян)</p>
                        </div>
                        <div class="position">
-                           <input type="button" class="position_img" id="_6a" onclick="done('_6a')">
-                           <input type="button" class="position_img" id="_6b" onclick="done('_6b')">
-                           <input type="button" class="position_img" id="_6c" onclick="done('_6c')">
+                           <input type="button" class="position_img" id="_6a" onclick="done('_6a'); draw_diagram('6a')">
+                           <input type="button" class="position_img" id="_6b" onclick="done('_6b'); draw_diagram('6b')">
+                           <input type="button" class="position_img" id="_6c" onclick="done('_6c'); draw_diagram('6c')">
                        </div>
                    </div>
                    <div class="clrb"></div>
@@ -232,9 +234,9 @@
                            <p>На подложке (под листами) (календарь ЕК1, ЕК2, ЕК3)</p>
                        </div>
                        <div class="position">
-                           <input type="button" class="position_img" id="_7a" onclick="done('_7a')">
-                           <input type="button" class="position_img" id="_7b" onclick="done('_7b')">
-                           <input type="button" class="position_img" id="_7c" onclick="done('_7c')">
+                           <input type="button" class="position_img" id="_7a" onclick="done('_7a'); draw_diagram('7a')">
+                           <input type="button" class="position_img" id="_7b" onclick="done('_7b'); draw_diagram('7b')">
+                           <input type="button" class="position_img" id="_7c" onclick="done('_7c'); draw_diagram('7c')">
                        </div>
                    </div>
                    <div class="clrb"></div>
@@ -243,9 +245,9 @@
                            <p>На внутренних элементах (коробка)</p>
                        </div>
                        <div class="position">
-                           <input type="button" class="position_img" id="_8a" onclick="done('_8a')">
-                           <input type="button" class="position_img" id="_8b" onclick="done('_8b')">
-                           <input type="button" class="position_img" id="_8c" onclick="done('_8c')">
+                           <input type="button" class="position_img" id="_8a" onclick="done('_8a'); draw_diagram('8a')">
+                           <input type="button" class="position_img" id="_8b" onclick="done('_8b'); draw_diagram('8b')">
+                           <input type="button" class="position_img" id="_8c" onclick="done('_8c'); draw_diagram('8c')">
                        </div>
                    </div>
                    <div class="clrb"></div>
@@ -254,8 +256,8 @@
                            <p>На дне, на дне базы (календарь домик, Календарь перек. стол)</p>
                        </div>
                        <div class="position">
-                           <input type="button" class="position_img" id="_9a" onclick="done('_9a')">
-                           <input type="button" class="position_img" id="_9b" onclick="done('_9b')">
+                           <input type="button" class="position_img" id="_9a" onclick="done('_9a'); draw_diagram('9a')">
+                           <input type="button" class="position_img" id="_9b" onclick="done('_9b'); draw_diagram('9b')">
                        </div>
                    </div>
                    <div class="clrb"></div>
@@ -264,8 +266,8 @@
                            <p>Этикетка, контрэтикетка, кольеретка</p>
                        </div>
                        <div class="position">
-                           <input type="button" class="position_img" id="_10a" onclick="done('_10a')">
-                           <input type="button" class="position_img" id="_10b" onclick="done('_10b')">
+                           <input type="button" class="position_img" id="_10a" onclick="done('_10a'); draw_diagram('10a')">
+                           <input type="button" class="position_img" id="_10b" onclick="done('_10b'); draw_diagram('10b')">
                        </div>
                    </div>
                    <div class="clrb"></div>

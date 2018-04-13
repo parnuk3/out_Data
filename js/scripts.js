@@ -1,58 +1,89 @@
 
+//global variables
+
+var pos_data_res = "";
+var type_data_res = "";
+
 function ch_group_tvp() {
 
     var tvp = document.getElementById("tvp").value
+    var et_group = ['Этикетка', 'Кольеретка', 'Контрэтикетка', 'Комплект этикетки', 'Полоска водки', 'Этикетка флат', 'Этикетка мороженное', 'Этикетка-книжка сф.', 'Этикетка-книжка скр.'];
+    var broshure_group = ["Брошюра КБС", "Брошюра КШС", "Брошюра скр.", "Брошюра пруж"];
+    var book_group = ["Книга ТП"];
+    var ezd_group = ["Еженедельник", "Ежедневник", "Удостов л.", "Удостов ТП", "Удостов ТП с блоком", "Диплом ТП", "Диплом ТП комплект"];
+    var sheet_group = ['Грамота','Карта листовая', 'Карта сфальцованная', 'Афиша', 'Набор открыток', 'ЦБ Бланк', 'Газета сф.', 'Газета скр.', 'Календарь плакат', 'КПриложение к диплому ТП', 'Титул к диплому ТП'];
+    var pack_sem_group = ['Пакет для семян'];
+    var pack_group = ['Пакет с ручками лента', 'Пакет с ручками шнур'];
+    var ek_group = ['Календарь ЕК1', 'Календарь ЕК2', 'Календарь ЕК3'];
+    var box_group = ['Коробка трехточка', 'Лоток с телескопическим бортом', 'Коробка Туба', 'Лоток с прямоугольным бортом', 'Коробка для сыпучих продуктов', 'Коробка с дном собираемым вручную', 'Моноблок', 'Шоу-бокс', 'Упаковка плоская'];
+    var kld_dom_group = ['Календарь перек. настольный', 'Календарь Домик'];
     
-    if (0) {
+    function inGroup(string) {
+      return string == tvp;
+    }
+    drop_diagram();
+    document.getElementById("type_data_res").innerHTML = "";
+    if (et_group.some(inGroup)) {
         return "et";
     }
-    else if (tvp == 'Этикетка' || tvp == 'Кольеретка' || tvp == 'Контрэтикетка' || tvp == 'Комплект этикетки' || tvp == 'Полоска водки' || tvp == 'Этикетка флат' || tvp == 'Этикетка мороженное' || tvp == 'Этикетка-книжка сф.' || tvp == 'Этикетка-книжка скр.') {
-        return "et";
-    }
-    else if (tvp == "Книга ТП") {
+    else if (book_group.some(inGroup)) {
         return "book";
     }
-    else if (tvp == "Брошюра КБС" || tvp == "Брошюра КШС" || tvp == "Брошюра скр." || tvp == "Брошюра пруж") {
+    else if (broshure_group.some(inGroup)) {
         return "broshure";
     }
-    else if (tvp == "Еженедельник" || tvp == "Ежедневник" || tvp == "Удостов л." || tvp == "Удостов ТП" || tvp == "Удостов ТП с блоком" || tvp == "Диплом ТП" || tvp == "Диплом ТП комплект") {
+    else if (ezd_group.some(inGroup)) {
         return "ezd";
     }
-    else if (tvp == 'Грамота' || tvp == 'Карта листовая' || tvp == 'Карта сфальцованная' || tvp == 'Афиша' || tvp == 'Набор открыток' || tvp == 'ЦБ Бланк' || tvp == 'Газета сф.' || tvp == 'Газета скр.' || tvp == 'Календарь плакат' || tvp == 'КПриложение к диплому ТП' || tvp == 'Титул к диплому ТП') {
+    else if (sheet_group.some(inGroup)) {
         return "sheet";
     }
-    else if (tvp == 'Пакет для семян') {
+    else if (pack_sem_group.some(inGroup)) {
         return "pack_sem";
     }
-    else if (tvp == 'Пакет с ручками лента' || tvp == 'Пакет с ручками шнур') {
+    else if (pack_group.some(inGroup)) {
         return "pack";
     }
-    else if (tvp == 'Календарь ЕК1' || tvp == 'Календарь ЕК2' || tvp == 'Календарь ЕК3') {
+    else if (ek_group.some(inGroup)) {
         return "ek";
     }
-    else if (tvp == 'Коробка трехточка' || tvp == 'Лоток с телескопическим бортом' || tvp == 'Коробка Туба' || tvp == 'Лоток с прямоугольным бортом' || tvp == 'Коробка для сыпучих продуктов' || tvp == 'Коробка с дном собираемым вручную' || tvp == 'Моноблок' || tvp == 'Шоу-бокс' || tvp == 'Упаковка плоская') {
+    else if (box_group.some(inGroup)) {
         return "box";
     }
-    else if (tvp == 'Календарь перек. настольный' || tvp == 'Календарь Домик') {
+    else if (kld_dom_group.some(inGroup)) {
         return "kld_dom";
     }
     else {
         return "error";
     }
 } //определяет группу твп
-
 function reboot(){
     location.reload(true);
 } //обновить страницу
+
+function drop(){
+        hide_out_data();
+        hide_position();
+        drop_diagram();
+        document.getElementById("change_out_data").style.display = "none";
+        document.getElementById("change_place").style.display = "none";
+}
+function drop_diagram(){
+        document.getElementById("diagram").style.background = "none";
+        document.getElementById("diagram_out_data").style.background = "none";
+        document.getElementById("diagram_out_data").style.outline = "none";
+        document.getElementById("legend").style.display = "none";
+        document.getElementById("pos_data_res").innerHTML = "";
+}
 
 function ch_product() {
 
     if (ch_group_tvp() == "error"){
         document.getElementById('error').innerHTML = "Для выбранной продукции нет варианта"
         document.getElementById('change_company').style.display = "none";
-        document.getElementById('change_out_data').style.display = "none";
-        document.getElementById('change_place').style.display = "none";
-        
+        document.getElementById("type_data_res").innerHTML = "";
+        document.getElementById("change_language").style.display = "none";
+        drop();
     }
     else{
         document.getElementById('error').innerHTML = ""
@@ -61,13 +92,11 @@ function ch_product() {
     
     
 } //после выбора продукции показывает 2 пункт, если для выбранной продукции не определены выходные данные, то выдает ошибку
-
 function ch_lang() {
 
     document.getElementById('change_language').style.display = "block";
     
 } //после выбора компании показывает 3 пункт
-
 function show_out_data() {
     document.getElementById('change_out_data').style.display = "block";
 } //отображает блок с выходными данными
@@ -77,7 +106,6 @@ function hide_out_data() {
         document.getElementById(a[i]).style.display = "none";
     }
 } //скрывает все элементы выходных данных
-
 function ch_out_data() {
     var lang = document.getElementById('change_language_select').value;
     var company = document.getElementById('change_company_select').value;
@@ -107,33 +135,15 @@ function ch_out_data() {
             document.getElementById('out_data_eng_alfa').style.display = "block";
         }
     } else { //если не выбрана компания, то возвращаемся к шагу 2
-        hide_out_data();
-        hide_position();
-        document.getElementById("diagram").style.background = "none";
-        document.getElementById("diagram_out_data").style.background = "none";
-        document.getElementById("diagram_out_data").style.outline = "none";
-        document.getElementById("legend").style.display = "none";
-        document.getElementById("pos_data_res").innerHTML = "";
+        drop();
         document.getElementById("type_data_res").innerHTML = "";
-        document.getElementById("change_out_data").style.display = "none";
-        document.getElementById("change_place").style.display = "none";
         document.getElementById("change_language").style.display = "none";
     }
     if (lang != "Рус" && lang != "Eng") {  //если не выбран язык, то возвращаемся к шагу 3
-
-        hide_out_data();
-        hide_position();
-        document.getElementById("diagram").style.background = "none";
-        document.getElementById("diagram_out_data").style.background = "none";
-        document.getElementById("diagram_out_data").style.outline = "none";
-        document.getElementById("legend").style.display = "none";
-        document.getElementById("pos_data_res").innerHTML = "";
-        document.getElementById("change_out_data").style.display = "none";
-        document.getElementById("change_place").style.display = "none";
+        drop();
     }
 
 }
-
 function show_position() { //отображает блок с вариантами расположения
     document.getElementById('change_place').style.display = "block";
 }
@@ -149,7 +159,6 @@ function select_out_data(Id) {
     document.getElementById(Id).style.outline = "3px solid #356"
     
 }
-
 function ch_position(){
     if (ch_group_tvp() == "broshure"){
         hide_position();
@@ -225,9 +234,6 @@ function draw_diagram_out_data(a){
     document.getElementById("type_data_res").innerHTML = a;
     type_data_res = a;
 }
-var pos_data_res = "";
-var type_data_res = "";
-
 function print_pdf(){
     if(type_data_res == ""){
         alert("Необходимо выбрать тип выходных данных")
@@ -270,4 +276,4 @@ function print_pdf(){
 
 pdfMake.createPdf(docInfo).download('name.pdf');
     }
-}
+} //Генерация PDF

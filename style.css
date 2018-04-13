@@ -44,6 +44,7 @@ h2{
 p {
     margin: 0px;
     display: inline;
+    margin-left: 10px;
 }
 #type_data,
 #pos_data{
@@ -382,11 +383,6 @@ p {
     background-repeat: no-repeat;
     width: 45%;
     height: 130px;
-}
-
-
-p {
-    margin-left: 10px;
 }
 
 

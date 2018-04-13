@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <title>Выходные данные</title>
     <link rel="stylesheet" href="style.css">
-    <script src="scripts.js"></script>
-    <script src="test.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/pdfmake.min.js"></script>
+    <script src="js/vfs_fonts.js"></script>
 </head>
 
 <body>
-   <div class="container">
+    <div class="container">
        <h1>Генератор выходных данных</h1>
-       <div id="result">
+          <div id="result">
            <div>
                <div id="type_data">
                    <p>Тип</p>
@@ -95,7 +96,7 @@
                        <option>Диплом ТП комплект</option>
                    </datalist>
                    <input type="button" id="reboot" value="Начать заново" onclick="reboot()">
-                   <input type="button" id="print" value="Печать" onclick="print()">
+                   <input type="button" id="print1" value="Печать" onclick="print_pdf()">
                    <div id="error"></div>
            </div>
            <div id="change_company">

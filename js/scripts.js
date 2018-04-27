@@ -251,7 +251,7 @@ function print_pdf(){
     },
     pageSize: 'A4',
     pageOrientation: 'portrait',
-    pageMargins:[506, 597, 0, 0],
+    pageMargins:[392, 595, 0, 0],
     
     header:[
         {
@@ -268,12 +268,12 @@ function print_pdf(){
     ],
     content: [
         {
-            text:  type_data_res + "        " + pos_data_res,
+            text:  "v" + "                                     " + type_data_res + "        " + pos_data_res,
             fontSize: 12
         }
     ]
 }
 
-pdfMake.createPdf(docInfo).download('name.pdf');
+pdfMake.createPdf(docInfo).download('out_data.pdf');
     }
 } //Генерация PDF
